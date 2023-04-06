@@ -31,10 +31,10 @@ public class DatePicker extends BaseClass {
 		click(By.xpath("//span[text()='Employees']"));
 		click(By.xpath("//ul[@id='admin_Employees']/li[1]/a"));
 		click(By.xpath("//span[text()=' Add New']"));
-		enterText(By.id("employee_id"),"101");
+		/*enterText(By.id("employee_id"),"101");
 		enterText(By.id("first_name"),"john");
 		enterText(By.id("middle_name"),"musk");
-		enterText(By.id("last_name"),"bhai");
+		enterText(By.id("last_name"),"bhai");*/
 		WebElement nationality = driver.findElement(By.xpath("//input[@id='rc_select_0']"));
 		nationality.click();
 		List<WebElement> nationalitydropdown= driver.findElements(By.xpath("//div[@id='rc_select_0_list']/following-sibling::div/div/div/div/div/div"));
@@ -52,7 +52,7 @@ public class DatePicker extends BaseClass {
 			break;
 		}
 		}
-		String selectcountry= driver.findElement(By.xpath("//div[text()='American']")).getText();
+		/*String selectcountry= driver.findElement(By.xpath("//div[text()='American']")).getText();
 		if(selectcountry.equals("American")) {
 			System.out.println("American nationality selected");
 		}else {
@@ -72,7 +72,7 @@ public class DatePicker extends BaseClass {
 		if(day.equals(today)) {
 			element1.click();
 		}
-	}
+	}*/
 		}
 		
 		
