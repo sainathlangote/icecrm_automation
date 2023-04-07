@@ -14,47 +14,52 @@ public class DynamicXpath extends BaseClass {
 	@BeforeClass
 	public void beforeClass() {
 		System.out.println("launching Browser and Navigate To Amazon URL ");
-	
-			luanchBrowser("edge");
-			driver.get("https://www.amazon.in/");
-			String url=driver.getCurrentUrl();
-			System.out.println(url);
-			String title=driver.getTitle();System.out.println(title);
-			driver.manage().window().maximize();
+
+		luanchBrowser("edge");
+		driver.get("https://www.amazon.in/");
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
+		String title = driver.getTitle();
+		System.out.println(title);
+		driver.manage().window().maximize();
 	}
+
 	@Test
 	public void Verifymobile() throws InterruptedException {
 		enterText(By.xpath("//input[@placeholder='Search Amazon.in']"), "mobile");
 		click(By.id("nav-search-submit-button"));
 		int totalResult;
 		Thread.sleep(3000);
-		List<WebElement> mobileresults= driver.findElements(By.xpath("//div[starts-with(@data-cel-widget, 'search_result_')]/descendant::h2//span"));
-		totalResult= mobileresults.size();
-		System.out.println("Total Result : "+ totalResult);
-		
-		for(int i=3; i<totalResult; i++) {
+		List<WebElement> mobileresults = driver
+				.findElements(By.xpath("//div[starts-with(@data-cel-widget, 'search_result_')]/descendant::h2//span"));
+		totalResult = mobileresults.size();
+		System.out.println("Total Result : " + totalResult);
+
+		for (int i = 3; i < totalResult; i++) {
 			try {
-			String namepath= "//div[starts-with(@data-cel-widget, 'search_result_')][" + i + "]/descendant::h2//span";
-			System.out.println(namepath);
-			String pricepath="//div[starts-with(@data-cel-widget, 'search_result_')][" + i + "]/descendant::span[@class='a-offscreen']";
-			System.out.println(pricepath);
-			String mobilename= driver.findElement(By.xpath(namepath)).getText();
-			String mobileprice= driver.findElement(By.xpath(pricepath)).getText();
-			Thread.sleep(1000);
-            System.out.println("Mobilename : "+ mobilename +"  Mobileprice  : "+ mobileprice );
-		} catch(Exception e) {
-			System.out.print(e.getMessage());
+				String namepath = "//div[starts-with(@data-cel-widget, 'search_result_')][" + i
+						+ "]/descendant::h2//span";
+				System.out.println(namepath);
+				String pricepath = "//div[starts-with(@data-cel-widget, 'search_result_')][" + i
+						+ "]/descendant::span[@class='a-offscreen']";
+				System.out.println(pricepath);
+				String mobilename = driver.findElement(By.xpath(namepath)).getText();
+				String mobileprice = driver.findElement(By.xpath(pricepath)).getText();
+				Thread.sleep(1000);
+				System.out.println("Mobilename : " + mobilename + "  Mobileprice  : " + mobileprice);
+			} catch (Exception e) {
+				System.out.print(e.getMessage());
+			}
 		}
-		}
-	}
-		
-		@AfterClass
-		public void afterclass(){
-			String url2=driver.getTitle();
-			System.out.println(url2);
-//			driver.close();
-			driver.quit();
-		
 	}
 
+	@AfterClass
+	public void afterclass() {
+		String url2 = driver.getTitle();
+		System.out.println(url2);
+//			driver.close();
+		driver.quit();
+
 	}
+
+}

@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+
 
 /*public class BaseClass {
 	public WebDriver driver;
@@ -64,7 +66,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class BaseClass {
-   public WebDriver driver;
+   public static WebDriver driver;
+   public ExtentTest log;
    public  void luanchBrowser(String browser) {   
 	   switch (browser) {
 	   case "chrome":
