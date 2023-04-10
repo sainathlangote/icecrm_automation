@@ -11,7 +11,7 @@ public class FrameHandling extends BaseClass {
 	@BeforeClass
 	public void beforeclass() {
 		System.out.println("Launching the browser");
-		luanchBrowser("edge");
+		launchBrowser("edge");
 	}
 
 	@Test

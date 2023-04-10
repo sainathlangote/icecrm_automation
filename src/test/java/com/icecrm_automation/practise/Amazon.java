@@ -2,12 +2,8 @@ package com.icecrm_automation.practise;
 
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -21,7 +17,7 @@ public class Amazon extends BaseClass{
 	public void beforeClass() {
 		System.out.println("launching Browser and Navigate To Amazon URL ");
 	
-			luanchBrowser("edge");
+			launchBrowser("chrome");
 			driver.get("https://www.amazon.in/");
 			String url=driver.getCurrentUrl();
 			System.out.println(url);

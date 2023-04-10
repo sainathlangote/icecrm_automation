@@ -10,7 +10,7 @@ public class WindowHandling2 extends BaseClass {
 	@BeforeClass
 	public void beforeclass() {
 	System.out.println("Launching the browser");
-	luanchBrowser("edge");
+	launchBrowser("edge");
 	}
 	
 	@Test
