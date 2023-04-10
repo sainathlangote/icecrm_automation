@@ -15,7 +15,7 @@ public class DynamicXpath extends BaseClass {
 	public void beforeClass() {
 		System.out.println("launching Browser and Navigate To Amazon URL ");
 
-		luanchBrowser("edge");
+		launchBrowser("edge");
 		driver.get("https://www.amazon.in/");
 		String url = driver.getCurrentUrl();
 		System.out.println(url);

@@ -2,20 +2,19 @@ package com.icecrm_automation.login;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
+
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Test;
 
 import com.icecrm_automation.utility.BaseClass;
 
 public class LoginTest extends BaseClass {
-  
 		@BeforeClass
-		public void beforeClass() {
+		public void beforeClass()  {
 			System.out.println("launching Browser and Navigate To IcrHRM URL ");
 		
-			luanchBrowser("edge");
+			launchBrowser("firefox");
 			driver.navigate().to("https://cybersuccess.icehrm.com/");
 			System.out.println(driver.getTitle());
 		}

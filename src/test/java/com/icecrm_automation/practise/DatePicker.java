@@ -15,7 +15,7 @@ public class DatePicker extends BaseClass {
 	public void beforeClass() {
 		System.out.println("launching Browser and Navigate To ICEhrms URL ");
 	
-			luanchBrowser("edge");
+			launchBrowser("edge");
 			driver.get("https://icehrm.com/app/cybersuccess/login.php");
 			String url=driver.getCurrentUrl();
 			System.out.println(url);

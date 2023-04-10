@@ -19,7 +19,7 @@ public class FindBrokenlinks extends BaseClass {
 	@BeforeClass
 	public void beforeclass() {
 		System.out.println("LAunching browser amazon");
-		luanchBrowser("edge");
+		launchBrowser("edge");
 		driver.navigate().to("https://www.amazon.in/");
 	}
 
